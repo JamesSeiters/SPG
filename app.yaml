@@ -1,0 +1,16 @@
+service: default
+runtime: python312
+
+handlers:
+
+- url: /
+  static_files: public/index.html
+  upload: public/index.html
+
+- url: /(.*)
+  static_files: public/\1
+  upload: public/(.*)
+
+# - url: /favicon-16x16\.png
+#   static_files: public/favicon-16x16.png
+#   upload: public/favicon-16x16\.png

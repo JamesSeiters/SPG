@@ -1,0 +1,7 @@
+Deploying to the live site execute this command from the SPG Working directory:
+
+gcloud app deploy
+
+Deploying to the test site execute this command from the SPG Working directory:
+
+gcloud app deploy --project=cobitis-testweb
