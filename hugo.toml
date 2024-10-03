@@ -1,3 +1,4 @@
 baseURL = 'https://example.org/'
 languageCode = 'en-us'
-title = 'My New Hugo Site'
+title = 'Self Publishing Genie'
+subtitle = 'Professional editing and book design services since 2012.'
