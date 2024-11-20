@@ -1,2 +1,12 @@
-<h1>{{ site.Title }}</h1>
-{{ partial "menu.html" (dict "menuID" "main" "page" .) }}
+    <div class="row">
+        <div class="col-2">
+            <img class="img-fluid small" src="{{.Site.BaseURL}}{{ .Site.Params.logo }}" />
+        </div>
+        <div class="col-8 text-center">
+            <h1 class="fs-1 title">{{ site.Title }}</h1>
+            <h2 class="fs-2">{{ .Site.Params.subtitle }}</h2>
+        </div>
+    <div class="col-2"></div>
+    </div>
+    <div>{{ .Page }}</div>
+    <div class="text-center">{{ partial "menu.html" (dict "menuID" "main" "page" .) }}</div>

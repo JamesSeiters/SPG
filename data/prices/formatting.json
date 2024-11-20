@@ -1,0 +1,11 @@
+{
+    "interior": {
+        "electronic":250,
+        "paperback":250
+    },
+    "cover": {
+        "electronic":250,
+        "paperback":250
+    },
+    "current":250
+}

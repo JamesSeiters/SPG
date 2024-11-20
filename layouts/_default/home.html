@@ -1,7 +1,11 @@
+{{ define "template" }}
+  {{ partial "show-template.html" (dict "Which" .Kind "Template" "layouts/_default/home.html") }}
+{{ end }}
+
 {{ define "main" }}
   {{ .Content }}
   {{ range site.RegularPages }}
-    <h2><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h2>
+    <h1><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h1>
     {{ .Summary }}
   {{ end }}
 {{ end }}

@@ -1,5 +1,9 @@
+{{ define "template" }}
+  {{ partial "show-template.html" (dict "Which" .Kind "Template" "layouts/_default/list.html") }}
+{{ end }}
+
 {{ define "main" }}
-  <h1>{{ .Title }}</h1>
+  <!-- <h3 class="text-center">{{ .Title }}</h3> -->
   {{ .Content }}
   {{ range .Pages }}
     <h2><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h2>

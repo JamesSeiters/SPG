@@ -1,10 +1,9 @@
+{{ define "template" }}
+  {{ partial "show-template" (dict "Which" .Kind "Template" "layouts/_default/single.html") }}
+{{ end }}
+
 {{ define "main" }}
-  <h1>{{ .Title }}</h1>
-
-  {{ $dateMachine := .Date | time.Format "2006-01-02T15:04:05-07:00" }}
-  {{ $dateHuman := .Date | time.Format ":date_long" }}
-  <time datetime="{{ $dateMachine }}">{{ $dateHuman }}</time>
-
+  <h1 class="text-center fs-8">{{ .Title }}</h1>
   {{ .Content }}
   {{ partial "terms.html" (dict "taxonomy" "tags" "page" .) }}
 {{ end }}

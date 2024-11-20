@@ -1,0 +1,27 @@
+{{- $prices := .Site.Data.prices }}
+
+{{- $category := .Get 0 }}
+{{- $type := .Get 1 }}
+
+{{- if eq $category "formatting" }}
+  {{- $media := .Get 2 }}
+  {{- if $type }}
+    {{- if $media }}
+      {{- or (index .Site.Data.prices.formatting $type $media) " unknown key" }}
+    {{- else }}
+      {{- " error - wrong media" }}
+    {{- end }}
+  {{- else }}
+    {{- " error - no type" }}
+  {{- end }}
+{{- else }}
+  {{- if eq $category "editing" }}
+    {{- if $type }}
+      {{- or (index .Site.Data.prices.editing $type) " unknown key" }}
+    {{- else }}
+      {{- " error - no type" }}
+    {{- end }}
+  {{- else }}
+    {{- " error - wrong category" }}
+  {{- end -}}
+{{- end -}}

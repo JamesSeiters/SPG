@@ -1,4 +1,20 @@
 baseURL = 'https://example.org/'
 languageCode = 'en-us'
-title = 'Self Publishing Genie'
-subtitle = 'Professional editing and book design services since 2012.'
+title = 'Self-Publishing Genie'
+sectionPagesMenu = 'main'
+uglyURLs = true
+
+[params]
+  subtitle = 'Professional editing and book design services since 2012.'
+  logo = '/images/genie.png'
+
+  [params.contact]
+    email = 'info@selfpublishinggenie.com'
+
+  [params.price]
+    current = '0.0125'
+    developmental = '0.5'
+
+[markup]
+  [markup.goldmark.renderer]
+    unsafe = true

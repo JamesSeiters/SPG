@@ -1,0 +1,22 @@
+{{- $turnaround := .Site.Data.turnaround }}
+
+{{- $category := .Get 0 }}
+{{- $type := .Get 1 }}
+
+{{- if eq $category "formatting" }}
+  {{- if $type }}
+    {{- or (index .Site.Data.turnaround.formatting $type) " unknown key" }}
+  {{- else }}
+    {{- " error - no type" }}
+  {{- end }}
+{{- else }}
+  {{- if eq $category "editing" }}
+    {{- if $type }}
+      {{- or (index .Site.Data.turnaround.editing $type) " unknown key" }}
+    {{- else }}
+      {{- " error - no type" }}
+    {{- end }}
+  {{- else }}
+    {{- " error - wrong category" }}
+  {{- end -}}
+{{- end -}}

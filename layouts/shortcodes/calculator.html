@@ -1,0 +1,36 @@
+{{- $js := resources.Get "js/calc.js" -}}
+{{- $opts := dict "params" (
+             dict "de_price" .Site.Data.prices.editing.developmental
+                  "le_price" .Site.Data.prices.editing.lineediting
+                  "ce_price" .Site.Data.prices.editing.copyediting
+                  "pr_price" .Site.Data.prices.editing.proofreading
+                  "ef_price" .Site.Data.prices.formatting.interior.electronic
+                  "pf_price" .Site.Data.prices.formatting.interior.paperback
+                  "ec_price" .Site.Data.prices.formatting.cover.electronic
+                  "pc_price" .Site.Data.prices.formatting.cover.paperback)
+-}}
+{{- $js = $js | js.Build $opts -}}
+<script src="{{ $js.Permalink }}"></script>
+<div id="quote_calculator" class="text-center quote_calculator" >
+    <h2>Quote Calculator</h2>
+    <form class="custom_form">
+        <label class="custom_label">Choose Your Services</label>
+        <input type="checkbox" id="DE_check" onclick="calculateprice_CU()"><label for="DE_check"> Developmental Editing</label><br><br>
+        <input type="checkbox" id="LE_check" onclick="calculateprice_CU()"><label for="LE_check"> Line Editing</label><br><br>
+        <input type="checkbox" id="CE_check" onclick="calculateprice_CU()"><label for="CE_check"> Copyediting</label><br><br>
+        <input type="checkbox" id="PR_check" onclick="calculateprice_CU()"><label for="PR_check"> Proofreading</label><br><br>
+        <input type="checkbox" id="EF_check" onclick="calculateprice_CU()"><label for="EF_check"> eBook Formatting</label><br><br>
+        <input type="checkbox" id="PF_check" onclick="calculateprice_CU()"><label for="PF_check"> Paperback Formatting</label><br><br>
+        <input type="checkbox" id="PC_check" onclick="calculateprice_CU()"><label for="PC_check"> Paperback Cover Design</label><br><br>
+        <input type="checkbox" id="EC_check" onclick="calculateprice_CU()"><label for="EC_check"> eBook Cover Design</label><br><br>
+    </form>
+    <form style="text-align: center;">
+        <label for="wordcount_CU">Manuscript Word Count: </label>
+        <br />
+        <input id="wordcount_CU" type="text" class="input_wordcount" onkeyup="calculateprice_CU()" placeholder="Word Count">
+        <br />
+        <br />
+        <span id="total_CU" class="total_span">$0</span>
+    </form>
+    <p style="text-align: center;">Click <a href="contact.html">here</a> to request a free sample!</p>
+</div>

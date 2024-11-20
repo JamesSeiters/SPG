@@ -1,0 +1,7 @@
+<div 
+{{- if  (.Get "class") }}
+class="{{ with .Get "class" }}{{ . }}{{ end }}"
+{{- end -}}
+>
+    {{ .Inner }}
+</div>
