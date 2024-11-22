@@ -11,21 +11,37 @@ Renders a menu for the given menu ID.
 {{- $menuID := .menuID }}
 
 {{- with index site.Menus $menuID }}
-  <nav>
-    <ul>
-      {{- partial "inline/menu/walk.html" (dict "page" $page "menuEntries" .) }}
-    </ul>
+  <nav class="navbar navbar-expand-sm navbar-custom">
+    <div class="container-fluid">
+      <div class="navbar-brand"><img src="/android-chrome-192x192.png" class="menu-brand" /></div>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <!-- <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li> -->
+          <!-- <li class="nav-item active"><a class="nav-link" href="services.html">Services</a></li> -->
+          <!-- <li class="nav-item"><a class="nav-link disabled" href="Portfolio">Portfolio</a></li> -->
+          <!-- <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li> -->
+          <!-- <li class="nav-item"><a class="nav-link" href="about.html">About</a></li> -->
+          {{- partial "inline/menu/walk.html" (dict "page" $page "menuEntries" .) }}
+        </ul>
+      </div>
+    </div>
   </nav>
 {{- end }}
 
 {{- define "partials/inline/menu/walk.html" }}
   {{- $page := .page }}
   {{- range .menuEntries }}
-    {{- $attrs := dict "href" .URL }}
+    {{- $href := dict "href" .URL }}
+    {{- $attrs := dict }}
     {{- if $page.IsMenuCurrent .Menu . }}
-      {{- $attrs = merge $attrs (dict "class" "active" "aria-current" "page") }}
+      {{- $attrs = merge $attrs (dict "class" "nav-item active" "aria-current" "page") }}
     {{- else if $page.HasMenuCurrent .Menu .}}
-      {{- $attrs = merge $attrs (dict "class" "ancestor" "aria-current" "true") }}
+      {{- $attrs = merge $attrs (dict "class" "nav-item ancestor" "aria-current" "true") }}
+    {{- else -}}
+      {{- $attrs = merge $attrs (dict "class" "nav-item") }}
     {{- end }}
     {{- $name := .Name }}
     {{- with .Identifier }}
@@ -33,14 +49,20 @@ Renders a menu for the given menu ID.
         {{- $name = . }}
       {{- end }}
     {{- end }}
-    <li>
-      <a
-        {{- range $k, $v := $attrs }}
-          {{- with $v }}
-            {{- printf " %s=%q" $k $v | safeHTMLAttr }}
-          {{- end }}
-        {{- end -}}
-      >{{ $name }}</a>
+    <li
+      {{- range $k, $v := $attrs }}
+        {{- with $v }}
+          {{- printf " %s=%q" $k $v | safeHTMLAttr }}
+        {{- end }}
+      {{- end -}}
+    >
+    <a class="nav-link"
+      {{- range $h, $l := $href }}
+        {{- with $l }}
+          {{- printf " %s=%q" $h $l | safeHTMLAttr }}
+        {{- end }}
+      {{- end -}}
+    >{{ $name }}</a>
       {{- with .Children }}
         <ul>
           {{- partial "inline/menu/walk.html" (dict "page" $page "menuEntries" .) }}
