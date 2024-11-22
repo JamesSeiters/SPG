@@ -1,8 +1,10 @@
 ---
 title: About
-menus: main
-draft: true
 description: Self-Publishing Genie a team you can trust.
+menus:
+  main:
+    weight: 100
+draft: true
 date: 2024-11-07T14:46:06.836Z
 ---
 {{< container >}}

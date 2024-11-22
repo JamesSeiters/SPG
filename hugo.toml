@@ -1,8 +1,6 @@
 baseURL = 'https://example.org/'
 languageCode = 'en-us'
 title = 'Self-Publishing Genie'
-sectionPagesMenu = 'main'
-uglyURLs = true
 
 [params]
   subtitle = 'Professional editing and book design services since 2012.'

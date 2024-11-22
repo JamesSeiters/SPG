@@ -1,12 +1,11 @@
 ---
 title: Contact
-menus: main
 description: ""
+menus:
+ main:
+   weight: 40
 date: 2024-11-18T14:09:05.665Z
-preview: ""
 draft: true
-tags: []
-categories: []
 ---
 {{< container >}}
 {{% row %}}

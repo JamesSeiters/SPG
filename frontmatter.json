@@ -42,6 +42,24 @@
           "title": "Categories",
           "name": "categories",
           "type": "categories"
+        },
+        {
+          "title": "menus",
+          "name": "menus",
+          "type": "string"
+        },
+        {
+          "title": "keywords",
+          "name": "keywords",
+          "type": "choice",
+          "choices": [
+            "editing"
+          ]
+        },
+        {
+          "title": "modified",
+          "name": "modified",
+          "type": "datetime"
         }
       ]
     }
