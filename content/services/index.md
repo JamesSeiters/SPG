@@ -145,5 +145,6 @@ Cost and Turnaround Time
 * ${{< price formatting cover paperback >}} for the paperback cover
 * {{< turnaround formatting cover >}}
 {{< calculator >}}
+Click [here](/contact) to request a free sample!
 {{% /row %}}
 {{< /container >}}

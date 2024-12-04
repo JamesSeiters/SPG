@@ -1,7 +1,10 @@
-
-
 .title {
     font-family: "Vollkorn SC";
+}
+
+.subtitle {
+    font-size: .8em;
+    text-align: center;
 }
 
 body {
@@ -35,6 +38,7 @@ ul {
 .custom_label {
     text-align: center;
     text-decoration: underline;
+    margin-bottom: 1.25em;
 }
 .contact_label {
     font-weight: bold;
@@ -47,7 +51,16 @@ ul {
     margin-right: auto;
 }
 
-/* Menus */
+.total_span {
+    font-size: 1.5em;
+}
+
+/* Bootstrap Overides */
+div.container-fluid {
+    --bs-gutter-x: .75rem;
+}
+
+/* Menus Overrides*/
 .active a{
     color: #dda200 !important;
 }
@@ -57,17 +70,31 @@ ul {
 }
 
 .navbar-custom {
-    background-color: #ffe4ff;
+    background-color: #ffe7ff;
+    border-top: 1px #ffd8ff solid;
+    border-bottom: 1px #ffdcff solid;
+    margin-bottom: 10px;
+}
+
+ul {
+    padding-left: 0 !important;
+}
+
+.navbar-brand {
+    --bs-navbar-brand-margin-end: 0;
 }
 
 /* Images */
 .menu-brand {
-    width: 10vw;
-    max-width: 48px;
+    width: 12vw;
+    max-width: 64px;
 }
 
-@media screen and (max-width: 500px) {
-    .small {
-        display: none;
+/* Media Queries */
+@media screen and (min-width: 767px) {
+    #navbarNav {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
     }
 }

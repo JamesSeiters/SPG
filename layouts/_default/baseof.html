@@ -4,19 +4,19 @@
     {{ partial "head.html" . }}
   </head>
   <body>
-    {{- if eq hugo.Environment "development" }}
-      {{ block "template" . }}{{ end }}
-    {{ end }}
+    <!-- {{- if eq hugo.Environment "development" }} -->
+      <!-- {{ block "template" . }}{{ end }} -->
+    <!-- {{ end }} -->
 
     <header>
       {{ partial "header.html" . }}
-      {{- if eq hugo.Environment "development" }}
-        <div class="text-center">{{ partial "menu.html" (dict "menuID" "main" "page" .) }}</div>
-      {{ end }}
     </header>
+    
     <main>
+      <!-- <h5 class="text-center bg-light">{{ .Title }}</h5> -->
       {{ block "main" . }}{{ end }}
     </main>
+    
     <footer>
       {{ partial "footer.html" . }}
     </footer>

@@ -13,12 +13,17 @@ Renders a menu for the given menu ID.
 {{- with index site.Menus $menuID }}
   <nav class="navbar navbar-expand-sm navbar-custom">
     <div class="container-fluid">
-      <div class="navbar-brand"><img src="/android-chrome-192x192.png" class="menu-brand" /></div>
+      <div class="navbar-brand">
+        <img src="/android-chrome-192x192.png" class="menu-brand" />
+      </div>
+      <div>
+        <h5 class="text-center">{{ $page.Title }}</h5>
+      </div>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav text-center">
           <!-- <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li> -->
           <!-- <li class="nav-item active"><a class="nav-link" href="services.html">Services</a></li> -->
           <!-- <li class="nav-item"><a class="nav-link disabled" href="Portfolio">Portfolio</a></li> -->
@@ -29,6 +34,11 @@ Renders a menu for the given menu ID.
       </div>
     </div>
   </nav>
+  <div class="col-12">
+    <!-- <h1 class="fs-3 title text-center">{{ site.Title }}</h1> -->
+    <!-- <h6 class="subtitle text-center">{{ site.Params.Subtitle }}</h6> -->
+  </div>
+
 {{- end }}
 
 {{- define "partials/inline/menu/walk.html" }}
