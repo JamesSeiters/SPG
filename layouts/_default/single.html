@@ -3,7 +3,6 @@
 {{ end }}
 
 {{ define "main" }}
-  <h1 class="text-center fs-8">{{ .Title }}</h1>
   {{ .Content }}
   {{ partial "terms.html" (dict "taxonomy" "tags" "page" .) }}
 {{ end }}
