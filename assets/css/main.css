@@ -5,7 +5,7 @@
 }
 
 body {
-    background-color: #ffeeff;
+    background-color: #ffecff;
 }
 
 ul {
@@ -45,6 +45,25 @@ ul {
     width: 95%;
     margin-left: auto;
     margin-right: auto;
+}
+
+/* Menus */
+.active a{
+    color: #dda200 !important;
+}
+
+.active a:hover {
+    color: #b18200 !important;
+}
+
+.navbar-custom {
+    background-color: #ffe4ff;
+}
+
+/* Images */
+.menu-brand {
+    width: 10vw;
+    max-width: 48px;
 }
 
 @media screen and (max-width: 500px) {

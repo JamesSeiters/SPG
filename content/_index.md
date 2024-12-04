@@ -1,9 +1,11 @@
 ---
 title: Home
-menus: main
-date: 2024-10-02T15:11:49.000Z
-draft: true
 description: 'Providing publishing services to authors and boutique publishers.'
+menus:
+  main:
+    weight: 10
+draft: true
+date: 2024-10-02T15:11:49.000Z
 keywords: [ "editing" ]
 ---
 Providing authors with the self-publishing services they need.
